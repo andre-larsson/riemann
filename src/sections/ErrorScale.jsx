@@ -69,7 +69,7 @@ export default function ErrorScale() {
       <Plot
         height={320}
         x={{ domain: [X0, X1], type: 'log', label: 'x (log scale)' }}
-        y={{ domain: [0.1, 1e6], type: 'log', label: 'size of error (log scale)' }}
+        y={{ domain: [0.1, 1e5], type: 'log', label: 'size of error (log scale)' }}
         label="Error of li(x) as a count of primes, compared with the bound that RH gives and with the wave from one zero with real part beta"
         endLabels={[
           { y: Math.max(1, atEnd.err), text: 'error', color: C.err },

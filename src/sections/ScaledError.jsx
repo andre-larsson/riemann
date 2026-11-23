@@ -5,7 +5,7 @@ import { Segmented, Slider } from '../components/Controls.jsx'
 import { li, primePi, primesUpTo } from '../lib/primes.js'
 import { ZEROS } from '../data/zeros.js'
 
-const C = { err: 'var(--s1)', waves: 'var(--s2)', offset: 'var(--ink-muted)' }
+const C = { err: 'var(--s1)', waves: 'var(--s2)', offset: 'var(--ink-2)' }
 const Y = [-0.4, 3]
 
 // Near view: real prime counts, x from 100 to 10^7.
@@ -249,9 +249,11 @@ export default function ScaledError() {
               below 0: π(x) is larger than li(x)
             </text>
             {far && <CrossingMark region={region} sx={sx} m={m} iw={iw} ih={ih} />}
-            <path className="series thin dashed" style={{ stroke: C.offset }} d={linePath(curves.off, sx, sy)} />
             <path className="series thin" style={{ stroke: C.waves }} d={linePath(curves.model, sx, sy)} />
             {!far && <path className="series thin" style={{ stroke: C.err }} d={linePath(actual, sx, sy)} />}
+            {/* The offset goes on top, on a casing, so the swings do not bury it. */}
+            <path className="series casing" d={linePath(curves.off, sx, sy)} />
+            <path className="series thin dashed" style={{ stroke: C.offset }} d={linePath(curves.off, sx, sy)} />
           </>
         )}
       </Plot>

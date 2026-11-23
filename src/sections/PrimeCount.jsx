@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import Plot, { Legend } from '../components/Plot.jsx'
-import { fmt, linePath, stepPath } from '../lib/chart.js'
+import { fmt, linePath, pow10Label, stepPath } from '../lib/chart.js'
 import { Segmented } from '../components/Controls.jsx'
 import { li, primePi, primesUpTo } from '../lib/primes.js'
 
@@ -127,7 +127,7 @@ function PrimeTable({ primes }) {
         <tbody>
           {rows.map((r) => (
             <tr key={r.x}>
-              <td>{r.x.toLocaleString('en-US')}</td>
+              <td>{pow10Label(r.x)}</td>
               <td>{r.n.toLocaleString('en-US')}</td>
               <td>{Math.round(r.xl).toLocaleString('en-US')}</td>
               <td>{Math.round(r.li).toLocaleString('en-US')}</td>

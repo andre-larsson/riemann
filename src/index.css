@@ -5,7 +5,7 @@
   --wash: #f0efec;
   --ink: #0b0b0b;
   --ink-2: #52514e;
-  --ink-muted: #898781;
+  --ink-muted: #6f6e68;
   --grid: #e1e0d9;
   --axis: #c3c2b7;
   --border: rgba(11, 11, 11, 0.1);
@@ -150,6 +150,7 @@ li + li {
 i {
   font-family: var(--serif);
   font-size: 1.06em;
+  line-height: 1;
 }
 
 section {
@@ -186,12 +187,14 @@ section {
 .math {
   font-family: var(--serif);
   white-space: nowrap;
+  line-height: 1;
 }
 
 .math.display {
   white-space: normal;
   text-align: center;
   font-size: 1.2rem;
+  line-height: 1.6;
   margin: 20px auto;
   overflow-x: auto;
 }
@@ -204,6 +207,7 @@ section {
 sub,
 sup {
   font-size: 0.7em;
+  line-height: 0;
 }
 
 .statement {
@@ -433,6 +437,12 @@ line.axis {
 
 .series.thin {
   stroke-width: 1.5;
+}
+
+/* A band in the surface colour under a line that crosses dense data. */
+.series.casing {
+  stroke: var(--surface);
+  stroke-width: 4;
 }
 
 .series.dashed {
@@ -728,6 +738,32 @@ footer h2 {
   .statement {
     font-size: 1.15rem;
   }
+
+  .lede {
+    font-size: 1.1rem;
+  }
+
+  /* A wrapped segmented control fills each row instead of leaving a ragged edge. */
+  .segmented {
+    flex: 1 1 100%;
+  }
+
+  .segmented-options {
+    display: flex;
+  }
+
+  .segmented button {
+    flex: 1 1 auto;
+  }
+
+  .table-view table {
+    font-size: 0.8rem;
+  }
+
+  .table-view th,
+  .table-view td {
+    padding: 6px 5px;
+  }
 }
 
 /* Touch screens: bigger hit areas for sliders, buttons and toggles. */
@@ -750,6 +786,15 @@ footer h2 {
 
   .table-view summary {
     padding: 10px 0;
+  }
+
+  .toc li {
+    margin: 0;
+  }
+
+  .toc a {
+    display: inline-block;
+    padding: 9px 0;
   }
 }
 
