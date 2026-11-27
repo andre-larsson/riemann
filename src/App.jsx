@@ -87,10 +87,17 @@ export default function App() {
           primes in the step.
         </p>
         <p>
-          Each new prime is close to <i>x</i>, so it removes about <span className="nb">1/<i>x</i></span> of the
-          numbers that still survive the sieve. Their current density is <i>D</i>, so one prime lowers the
-          density by about <span className="nb"><i>D</i>/<i>x</i></span>. The total drop is the number of new
-          primes times the drop per prime. Since the density falls, its change is
+          Adding one new prime <i>p</i> to the sieve multiplies the current density <i>D</i> by{' '}
+          <span className="nb">1 − 1/<i>p</i></span>. Since <i>p</i> is close to <i>x</i>, the new density is
+        </p>
+        <p className="math display">
+          <span className="nb"><i>D</i><sub>new</sub> ≈ <i>D</i>(1 − 1/<i>x</i>)</span>{' '}
+          <span className="nb">= <i>D</i> − <i>D</i>/<i>x</i></span>
+        </p>
+        <p>
+          So one prime removes about <span className="nb">1/<i>x</i></span> of the surviving numbers, a drop
+          of about <span className="nb"><i>D</i>/<i>x</i></span> in the density. With about{' '}
+          <span className="nb"><i>D</i> d<i>x</i></span> new primes in the step, these drops add up to a change of
         </p>
         <p className="math display">
           <span className="nb">d<i>D</i> ≈ −(<i>D</i> d<i>x</i>)</span>{' '}
