@@ -112,9 +112,20 @@ export default function App() {
           <sup>2</sup> / <i>x</i>
         </p>
         <p>
-          This equation says that 1/<i>D</i> grows at the rate 1/<i>x</i>. So 1/<i>D</i> is{' '}
-          <span className="nb">ln <i>x</i></span> plus a
-          constant, and the constant does not matter when <i>x</i> is large. The result is{' '}
+          The derivative of 1/<i>D</i> with respect to <i>D</i> is{' '}
+          <span className="nb">−1/<i>D</i><sup>2</sup></span>. To find how fast 1/<i>D</i> changes with{' '}
+          <i>x</i>, the chain rule multiplies this derivative by <span className="nb">d<i>D</i>/d<i>x</i></span>.
+        </p>
+        <p className="math display">
+          <span className="nb">d(1/<i>D</i>)/d<i>x</i></span>{' '}
+          <span className="nb">= (−1/<i>D</i><sup>2</sup>)(d<i>D</i>/d<i>x</i>)</span>{' '}
+          <span className="nb">= (−1/<i>D</i><sup>2</sup>)(−<i>D</i><sup>2</sup>/<i>x</i>)</span>{' '}
+          <span className="nb">= 1/<i>x</i></span>
+        </p>
+        <p>
+          The two minus signs cancel, as do the factors of <i>D</i><sup>2</sup>. So 1/<i>D</i> grows at the
+          same rate as <span className="nb">ln <i>x</i></span>, whose derivative is 1/<i>x</i>. They differ by
+          a constant. For large <i>x</i>, this gives{' '}
           <span className="math">
             <i>D</i>(<i>x</i>) ≈ 1 / ln <i>x</i>
           </span>
