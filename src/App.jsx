@@ -82,9 +82,23 @@ export default function App() {
           </span>
         </p>
         <p>
-          Now move <i>x</i> forward by a small step d<i>x</i>. The step contains about{' '}
-          <span className="nb"><i>D</i> d<i>x</i></span> new primes. Each new prime is close to <i>x</i>, so it multiplies
-          the product by <span className="nb">1 − 1/<i>x</i></span>. Thus the density decreases at the rate
+          Now move <i>x</i> forward by a small step d<i>x</i>. Since a fraction <i>D</i> of the numbers near{' '}
+          <i>x</i> are prime in this model, we expect about <span className="nb"><i>D</i> d<i>x</i></span> new
+          primes in the step.
+        </p>
+        <p>
+          Each new prime is close to <i>x</i>, so it removes about <span className="nb">1/<i>x</i></span> of the
+          numbers that still survive the sieve. Their current density is <i>D</i>, so one prime lowers the
+          density by about <span className="nb"><i>D</i>/<i>x</i></span>. The total drop is the number of new
+          primes times the drop per prime. Since the density falls, its change is
+        </p>
+        <p className="math display">
+          <span className="nb">d<i>D</i> ≈ −(<i>D</i> d<i>x</i>)</span>{' '}
+          <span className="nb">× (<i>D</i>/<i>x</i>)</span>
+        </p>
+        <p>
+          Dividing by d<i>x</i> gives the rate predicted by the model. The two factors of <i>D</i> give{' '}
+          <i>D</i><sup>2</sup>.
         </p>
         <p className="math display">
           d<i>D</i> / d<i>x</i> = −<i>D</i>
